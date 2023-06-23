@@ -1,8 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+﻿using VideoProcess.Sample.Extensions;
 
 var builder = WebApplication
     .CreateBuilder(args)
@@ -21,7 +17,8 @@ builder.Services
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();   
+builder.Services.AddSwaggerGen();
+builder.Services.AddDiskApi(builder.Configuration.GetSection("YandexDisk"));
 
 var app = builder.Build();
 

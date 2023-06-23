@@ -15,10 +15,8 @@ public static class DiskApiExtension
             .Configure<YandexDiskSettings>(section.Bind)
             .AddSingleton<IDiskApi, DiskHttpApi>(opt =>
             {
-                var settings = opt.GetRequiredService<IOptions<YandexDiskSettings>>();
-                
-                var res = new DiskHttpApi(settings.Value.TokenId);
-                res.Commands.CreateDictionaryAsync(settings.Value.FilePath);
+                var settings = opt.GetRequiredService<IOptions<YandexDiskSettings>>(); 
+                var res = new DiskHttpApi(settings.Value.TokenId); 
                 return res;
             });
     }
