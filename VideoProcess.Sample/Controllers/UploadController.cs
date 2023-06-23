@@ -8,8 +8,7 @@ namespace VideoProcess.Sample.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 public class UploadController : ControllerBase
-{
-    // https://t.me/AlexeyKildyushev#access_token=y0_AgAAAAA2qobvAAoWQAAAAADmKT9O_qckcntDTBeWmAeu1ZCP8Ha4DD4&token_type=bearer&expires_in=31536000
+{ 
     private readonly ILogger<UploadController> _logger;
     private readonly IDiskApi _diskApi;
 
