@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoProcess", "VideoProcess\VideoProcess.csproj", "{A702E1EB-2712-4BB8-B7B2-B0A3B2465439}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoProcess.NET", "VideoProcess\VideoProcess.NET.csproj", "{A702E1EB-2712-4BB8-B7B2-B0A3B2465439}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoProcess.Sample", "VideoProcess.Sample\VideoProcess.Sample.csproj", "{4A99F1AB-0512-4D97-9E33-32B0E605868B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoProcess.NET.Sample", "VideoProcess.Sample\VideoProcess.NET.Sample.csproj", "{4A99F1AB-0512-4D97-9E33-32B0E605868B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{CFC20480-88FE-4C20-A02C-3580379CB8BA}"
 	ProjectSection(SolutionItems) = preProject
