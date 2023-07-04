@@ -31,6 +31,7 @@ public class UploadController : ControllerBase
             await using var stream = file.OpenReadStream();
             var path = _settings.FilePath + '/' + GetPostfix + '_' + file.FileName;
             await _diskApi.Files.UploadFileAsync(path, true, stream);
+            _logger.LogInformation("Saved in {Path}", path);
             return new UploadResultDto
             {
                 Url = path,
