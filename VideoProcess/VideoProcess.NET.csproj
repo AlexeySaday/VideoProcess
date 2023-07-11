@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
+  <PropertyGroup> 
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Authors>Alex Saday</Authors>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Modify\" />
-  </ItemGroup>
 
 </Project>

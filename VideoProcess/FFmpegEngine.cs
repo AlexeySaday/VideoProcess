@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using VideoProcess.NET.Domain;
 using VideoProcess.NET.Extensions;
+using VideoProcess.NET.Input;
 
 namespace VideoProcess.NET;
 
@@ -13,6 +14,18 @@ public class FfmpegEngine
         ffmpegPath ??= Constants.FfmpegExecutable;
         _ffmpegPath = ffmpegPath.TryGetFfmpegPath();
     }
+
+    //public async Task<Metadata> GetMetaDataAsync(IInputArgument mediaFile, CancellationToken cancellationToken)
+    //{
+    //    var parameters = new FfmpegParameter
+    //    {
+    //        InputArgument = mediaFile,
+    //        TaskType = FFmpegTaskType.GetMetadata, 
+    //    };
+
+    //    await ExecuteAsync(parameters, cancellationToken).ConfigureAwait(false);
+    //    return mediaFile.Metadata;
+    //}
 
     private async Task ExecuteAsync(FfmpegParameter parameters, CancellationToken cancellationToken)
     {

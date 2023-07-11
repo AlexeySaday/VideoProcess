@@ -8,7 +8,7 @@ public static class FfmpegStringBuilder
     {
         return parameter.TaskType switch
         {
-            FFmpegTaskType.GetMetadata => GetMetadata(parameter.InputArgument),
+            //FFmpegTaskType.GetMetadata => GetMetadata(parameter.InputArgument),
             _ => throw new NotImplementedException(),
         };
     }
