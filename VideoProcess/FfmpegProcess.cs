@@ -21,7 +21,7 @@ public class FfmpegProcess
     public async Task ExecuteAsync(CancellationToken cancellationToken)
     { 
         var arguments = FfmpegStringBuilder.BuildString(_parameters);
-        ProcessStartInfo startInfo = GenerateStartInfo(_ffmpegPath, arguments);
+        var startInfo = GenerateStartInfo(_ffmpegPath, arguments);
         await ExecuteAsync(startInfo, _parameters, cancellationToken).ConfigureAwait(false);
     }
 
