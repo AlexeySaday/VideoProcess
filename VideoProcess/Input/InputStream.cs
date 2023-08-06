@@ -3,10 +3,7 @@
 namespace VideoProcess.NET.Input;
 
 public class InputStream : IInputArgument, IProcessHandler, IDisposable, IAsyncDisposable
-{
-    private const int ChannelClosedHResult = -2147024787;
-    private const int ReadBufferSize = 64 * 1024; // 64Kb
-
+{ 
     private readonly Stream _stream; 
     public string Argument => "-";
 
@@ -35,12 +32,12 @@ public class InputStream : IInputArgument, IProcessHandler, IDisposable, IAsyncD
         try
         {
             var inputStream = process.StandardInput.BaseStream;
-            var buffer = new byte[ReadBufferSize];
+            var buffer = new byte[Constants.ReadBufferSizeForByteArray];
             var bytesRead = 0;
 
             do
             {
-                bytesRead = await _stream.ReadAsync(buffer, 0, ReadBufferSize, cancellationToken)
+                bytesRead = await _stream.ReadAsync(buffer, 0, Constants.ReadBufferSizeForByteArray, cancellationToken)
                     .ConfigureAwait(false);
 
                 await inputStream.WriteAsync(buffer, 0, bytesRead, cancellationToken)
@@ -48,7 +45,7 @@ public class InputStream : IInputArgument, IProcessHandler, IDisposable, IAsyncD
 
             } while (bytesRead > 0 && !process.HasExited);
         }
-        catch (IOException ioException) when (ioException.HResult == ChannelClosedHResult)
+        catch (IOException ioException) when (ioException.HResult == Constants.ChannelClosedHResult)
         {
             // If input stream has already closed, ignore it.
         }

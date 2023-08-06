@@ -4,12 +4,39 @@ namespace VideoProcess.NET.Input;
 
 public class InputByteArray : IInputArgument, IProcessHandler
 {
+    public string Argument => "-";
 
+    private readonly ReadOnlyMemory<byte> _data;
 
-    public string Argument => throw new NotImplementedException();
-
-    public Task HandleProcessStartedAsync(Process process, CancellationToken cancellationToken)
+    public InputByteArray(byte[] data, int offset, int count)
     {
-        throw new NotImplementedException();
+        _data = new ReadOnlyMemory<byte>(data, offset, count);
+    }
+
+    public InputByteArray(ReadOnlyMemory<byte> data)
+    {
+        _data = data;
+    }
+
+    public async Task HandleProcessStartedAsync(Process process, CancellationToken cancellationToken)
+    {
+        if (process is null || process.HasExited)
+        {
+            return;
+        }
+
+        try
+        {
+            var inputStream = process.StandardInput.BaseStream;
+            await inputStream.WriteAsync(_data, cancellationToken);
+        }
+        catch (IOException ioException) when (ioException.HResult == Constants.ChannelClosedHResult)
+        {
+            // If input stream has already closed, ignore it.
+        }
+        catch (InvalidOperationException)
+        {
+            // If the process doesn't exist anymore, ignore it.
+        }
     }
 }

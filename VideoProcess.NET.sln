@@ -5,14 +5,12 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoProcess.NET", "VideoProcess\VideoProcess.NET.csproj", "{A702E1EB-2712-4BB8-B7B2-B0A3B2465439}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoProcess.NET.Sample.Stream", "VideoProcess.Sample\VideoProcess.NET.Sample.Stream.csproj", "{4A99F1AB-0512-4D97-9E33-32B0E605868B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{CFC20480-88FE-4C20-A02C-3580379CB8BA}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		README.md = README.md
-		LICENSE.txt = LICENSE.txt
 		icon.png = icon.png
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoProcess.NET.Tests", "VideoProcess.NET.Tests\VideoProcess.NET.Tests.csproj", "{D0F5F968-AA0D-442C-9306-DC052EAA1E21}"
@@ -27,10 +25,6 @@ Global
 		{A702E1EB-2712-4BB8-B7B2-B0A3B2465439}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A702E1EB-2712-4BB8-B7B2-B0A3B2465439}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A702E1EB-2712-4BB8-B7B2-B0A3B2465439}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A99F1AB-0512-4D97-9E33-32B0E605868B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A99F1AB-0512-4D97-9E33-32B0E605868B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A99F1AB-0512-4D97-9E33-32B0E605868B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A99F1AB-0512-4D97-9E33-32B0E605868B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D0F5F968-AA0D-442C-9306-DC052EAA1E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0F5F968-AA0D-442C-9306-DC052EAA1E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0F5F968-AA0D-442C-9306-DC052EAA1E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
