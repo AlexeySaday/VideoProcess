@@ -36,12 +36,12 @@ public class FfmpegProcess
             //var useStandardInput = _parameters.InputArgument.UseStandardInput == true;
             task = ffmpegProcess.WaitForExit(cancellationToken);
 
-            //var inputHandler = _parameters.Input as IProcessExecutionHandler;
+            var inputHandler = _parameters.InputArgument as IProcessHandler;
 
-            //if (inputHandler != null)
-            //{
-            //    await inputHandler.HandleProcessStartedAsync(ffmpegProcess, cancellationToken).ConfigureAwait(false);
-            //}
+            if (inputHandler != null)
+            {
+                await inputHandler.HandleProcessStartedAsync(ffmpegProcess, cancellationToken).ConfigureAwait(false);
+            }
 
             try
             {
@@ -58,12 +58,7 @@ public class FfmpegProcess
                 }
                 // I don't think this can occur, but if some other exception, rethrow it.
                 throw;
-            }
-
-            //if (inputHandler != null)
-            //{
-            //    await inputHandler.HandleProcessExitedAsync(ffmpegProcess, cancellationToken).ConfigureAwait(false);
-            //}
+            } 
         }
         finally
         {

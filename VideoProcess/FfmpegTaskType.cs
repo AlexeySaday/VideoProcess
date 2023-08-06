@@ -1,6 +1,6 @@
 ﻿namespace VideoProcess.NET;
 
-public enum FFmpegTaskType
+public enum FfmpegTaskType
 {
     Unknown = 0,
     GetMetadata = 1,

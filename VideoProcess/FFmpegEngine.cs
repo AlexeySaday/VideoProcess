@@ -33,7 +33,7 @@ public class FfmpegEngine
         {
             InputArgument = input,
             OutputArgument = output,
-            TaskType = FFmpegTaskType.Convert,
+            TaskType = FfmpegTaskType.Convert,
             ConvertOptions = options,
         };
 

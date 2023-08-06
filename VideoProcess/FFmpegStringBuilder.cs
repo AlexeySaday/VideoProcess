@@ -9,7 +9,7 @@ public static class FfmpegStringBuilder
     {
         return parameter.TaskType switch
         {
-            FFmpegTaskType.Convert => 
+            FfmpegTaskType.Convert => 
         $" -i {parameter.InputArgument.Argument} {Convert(parameter.ConvertOptions!)} {parameter.OutputArgument.Argument}",
             //FFmpegTaskType.GetMetadata => GetMetadata(parameter.InputArgument),
             _ => throw new NotImplementedException(),

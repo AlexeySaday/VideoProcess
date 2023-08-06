@@ -3,7 +3,7 @@ using VideoProcess.NET.Output;
 
 namespace VideoProcess.NET.Tests;
 
-public class InputFileTest
+public class InputFileTests
 {
     [Fact]
     public async void Simple()
